@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18e38268af1ba404bbf0ec2e983119e6, type: 3}
-  m_Name: Ring_Value
+  m_Name: Health_Ring_Capacity
   m_EditorClassIdentifier: 
-  Value: 0.5
+  DefaultValue: 1
+  Value: 1
