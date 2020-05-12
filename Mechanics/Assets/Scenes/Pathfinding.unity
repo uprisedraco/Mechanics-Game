@@ -166,9 +166,80 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 10
   heigth: 5
-  textAsset: {fileID: 4900000, guid: 29c6721a50538c346a5580fc8701549d, type: 3}
-  textureMap: {fileID: 0}
+  textAsset: {fileID: 0}
+  textureMap: {fileID: 2800000, guid: f21325f06dd70994aa8f794756f615d9, type: 3}
   resoursePath: Pathfinding
+  openColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  blockedColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  lightTerrainColor:
+    serializedVersion: 2
+    rgba: 4283351676
+  mediumTerrainColor:
+    serializedVersion: 2
+    rgba: 4281663484
+  heavyTerrainColor:
+    serializedVersion: 2
+    rgba: 4279009791
+--- !u!1 &1083965378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1083965379}
+  - component: {fileID: 1083965380}
+  m_Layer: 0
+  m_Name: Pathfinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1083965379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083965378}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1083965380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083965378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 017766a4a2d5e2c4bb3c082a0d5650c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 0, g: 1, b: 0, a: 1}
+  goalColor: {r: 1, g: 0, b: 0, a: 1}
+  frontierColor: {r: 1, g: 0, b: 1, a: 1}
+  exploreColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  pathColor: {r: 0, g: 1, b: 1, a: 1}
+  arrowColor: {r: 0.85, g: 0.85, b: 0.85, a: 1}
+  highlightColor: {r: 1, g: 1, b: 0.5, a: 1}
+  showIterations: 1
+  showColors: 1
+  showArrows: 0
+  exitOnGoal: 1
+  isComplete: 0
+  mode: 3
 --- !u!1 &1145651228
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +293,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 19
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -246,11 +317,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145651228}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 7.5, y: 20, z: 4}
+  m_LocalPosition: {x: 31.5, y: 20, z: 17.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1712139106
 GameObject:
@@ -342,7 +413,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1717037076
 GameObject:
@@ -402,8 +473,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeViewPrefab: {fileID: 6911624118690003567, guid: 1cc8955382ebf9243af6ee2852517c3e,
     type: 3}
-  baseColor: {r: 1, g: 1, b: 1, a: 1}
-  wallColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1794833147
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +502,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1794833149
 MonoBehaviour:
@@ -449,3 +518,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapData: {fileID: 422397434}
   graph: {fileID: 1717037078}
+  pathfinder: {fileID: 1083965380}
+  startX: 0
+  startY: 0
+  goalX: 21
+  goalY: 11
+  timeStep: 0
