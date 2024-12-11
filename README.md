@@ -1,3 +1,3 @@
 # Mechanics-Game
 
-Тестовый проект с различными игровыми механиками.
+Test project with various game mechanics.
